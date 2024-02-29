@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+    <script src="flutter/flutter.js" defer></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <div id="flutter_host" style="height:900px; width:500px;">Loading...</div>
+    <script>
+      window.addEventListener('load', function (ev) {
+      _flutter.loader.loadEntrypoint({
+        entrypointUrl: "flutter/main.dart.js",
+        onEntrypointLoaded: async function(engineInitializer) {
+          let appRunner = await engineInitializer.initializeEngine({
+            hostElement: document.querySelector("#flutter_host"),
+            assetBase: "flutter/"
+          });
+          appRunner.runApp();
+        }
+      });
+    });
+    </script>
+  </body>
+</html>
