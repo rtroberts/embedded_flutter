@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  // Browser keybinds work
+  runApp(const MyApp());
+  // Browser keybinds disabled
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
